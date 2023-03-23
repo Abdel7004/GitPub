@@ -7,6 +7,13 @@ app.get('/', (req, res) => {
     res.send('Welcome to the Gitpub App!');
   });
 
+ // Drinks Variable and route
+const drinks = require('./models/drinks')
+
+app.get('/drinks', (req, res) => {
+    res.send(drinks);
+  });
+  
 // Listen at the bottom
 app.listen(port, () => {
     console.log(`🏝️ Server is listening to PORT ${port} 🎧`)
