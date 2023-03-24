@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drinks</title>
+</head>
+
+<body>
+    <h1>Welcome to the Gitpub</h1>
+    <h2>Drinks</h2>
+    <ul>
+
+        <!-- Make each listed drink a link that will go to the route /drinks/x, 
+     where 'x' is the array position of the drink in the data array. This should be set dynamically with ejs! -->
+
+        <% for(let i=0; i < allDrinks.length; i++ ) {%>
+            <% let drink=allDrinks[i].name %>
+                <% drink=drink[0].toUpperCase() + drink.substring(1).toLowerCase() %>
+
+                    <li>
+                        <a href="/drinks/<%= i %>">
+                            <%= drink %>
+                        </a>
+                    </li>
+                    <% } %>
+    </ul>
+
+    <style type="text/css">
+        body {
+            color: blanchedalmond;
+            background-color: steelblue;
+        }
+
+        li {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+        }
+    </style>
+
+</body>
+
+</html>

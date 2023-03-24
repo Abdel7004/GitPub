@@ -10,10 +10,12 @@ app.get('/', (req, res) => {
  // Drinks Variable and route
 const drinks = require('./models/drinks')
 
-app.get('/drinks', (req, res) => {
-    res.send(drinks);
+app.get('/drinks', (req,res)=>{
+  res.render('drinks_index.ejs', {
+      allDrinks: drinks,
   });
-  
+});
+
 // Listen at the bottom
 app.listen(port, () => {
     console.log(`🏝️ Server is listening to PORT ${port} 🎧`)
